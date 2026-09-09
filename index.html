@@ -57,12 +57,13 @@
     /* Hero Section */
     .hero {
       padding: 4rem 2rem 5rem;
-      max-width: 1200px;
+      max-width: 100%;
       margin: 0 auto;
     }
 
     .hero-content {
-      max-width: 700px;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     .hero h1 {
@@ -71,6 +72,7 @@
       margin-bottom: 1.5rem;
       font-weight: 600;
       letter-spacing: -0.8px;
+      max-width: 850px;
     }
 
     .hero h1 span {
@@ -82,7 +84,7 @@
       color: var(--text-muted);
       margin-bottom: 2rem;
       line-height: 1.7;
-      max-width: 600px;
+      max-width: 800px;
     }
 
     .credentials {
@@ -563,18 +565,38 @@
     }
 
     /* Responsive */
+    @media (min-width: 1024px) {
+      .hero {
+        padding: 6rem 4rem 7rem;
+      }
+
+      .hero h1 {
+        font-size: 3.2rem;
+      }
+
+      .hero p {
+        font-size: 1.15rem;
+      }
+    }
+
     @media (max-width: 768px) {
       .hero {
         padding: 2.5rem 1.5rem 3rem;
       }
 
+      .hero-content {
+        max-width: 100%;
+      }
+
       .hero h1 {
         font-size: 2rem;
         margin-bottom: 1rem;
+        max-width: 100%;
       }
 
       .hero p {
         font-size: 1rem;
+        max-width: 100%;
       }
 
       .credentials {
