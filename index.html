@@ -425,10 +425,9 @@
     /* Approach Section */
     .approach {
       padding: 6rem 2rem;
-      background: #0d0d0d;
-      color: var(--cream);
+      background: var(--cream);
+      color: var(--text);
       margin-top: 0;
-      border-left: 6px solid var(--sage);
     }
 
     .approach-container {
@@ -437,18 +436,19 @@
     }
 
     .approach .section-title {
-      color: #ffffff;
+      color: var(--text);
     }
 
     .approach-text {
-      max-width: 700px;
+      max-width: 100%;
       font-size: 1.05rem;
       line-height: 1.8;
       color: var(--text);
-      padding: 2rem;
-      background: var(--cream);
-      border: 3px solid var(--sage);
+      padding: 2.5rem;
+      background: white;
+      border-left: 6px solid var(--sage);
       border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
     .approach-text p + p {
@@ -457,6 +457,7 @@
 
     .approach-text strong {
       color: var(--sage);
+      font-weight: 600;
     }
 
     /* Social Section */
