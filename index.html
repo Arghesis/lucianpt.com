@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucian PT | Mobility & Strength Coaching</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --dark: #1a1a1a;
+      --cream: #f8f7f4;
+      --sage: #5a9a7c;
+      --sage-light: #d4e4df;
+      --text: #2a2a2a;
+      --text-muted: #666;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      background: var(--cream);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: -0.5px;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--sage);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4rem 2rem 5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.8px;
+    }
+
+    .hero h1 span {
+      color: var(--sage);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    .credentials {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .credential {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+      padding: 0.75rem 1.25rem;
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 4px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 0.95rem 2rem;
+      background: var(--sage);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .cta-button:hover {
+      background: #4a8a6f;
+      transform: translateY(-2px);
+    }
+
+    .cta-secondary {
+      background: white;
+      color: var(--sage);
+      border: 2px solid var(--sage);
+      margin-left: 1rem;
+    }
+
+    .cta-secondary:hover {
+      background: var(--sage-light);
+      transform: translateY(-2px);
+    }
+
+    /* Services Section */
+    .services {
+      padding: 5rem 2rem;
+      background: white;
+      margin-top: 3rem;
+    }
+
+    .services-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 3rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+
+    /* Transformations Grid */
+    .transformations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    .transformation-card {
+      padding: 2.5rem 2rem;
+      background: linear-gradient(135deg, var(--sage) 0%, #4a8a6f 100%);
+      color: white;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .transform-stat {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -1px;
+    }
+
+    .transform-name {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .transform-detail {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      opacity: 0.95;
+    }
+
+    .transform-timeframe {
+      font-size: 0.85rem;
+      opacity: 0.85;
+    }
+
+    /* Outcomes Grid */
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .outcome-item {
+      padding: 1.5rem;
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 4px;
+    }
+
+    .outcome-item h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+
+    .outcome-item p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      padding: 5rem 2rem;
+      background: var(--dark);
+    }
+
+    .testimonials-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonials .section-title {
+      color: var(--cream);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      padding: 2rem;
+      background: rgba(248, 247, 244, 0.05);
+      border-left: 3px solid var(--sage);
+      border-radius: 2px;
+    }
+
+    .testimonial-text {
+      font-size: 0.95rem;
+      color: rgba(248, 247, 244, 0.9);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      font-size: 0.9rem;
+      color: var(--sage-light);
+      font-weight: 600;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .service-card {
+      padding: 2rem;
+      background: var(--cream);
+      border-left: 4px solid var(--sage);
+      border-radius: 2px;
+    }
+
+    .service-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    /* Coach Section */
+    .coach-section {
+      padding: 5rem 2rem;
+      background: white;
+    }
+
+    .coach-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .coach-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .coach-image-wrapper {
+      position: relative;
+    }
+
+    .coach-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .coach-text h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+
+    .coach-text p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    .coach-credentials-detail {
+      padding: 1.5rem;
+      background: var(--cream);
+      border-left: 4px solid var(--sage);
+      border-radius: 2px;
+      margin-top: 2rem;
+    }
+
+    .coach-credentials-detail p {
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .coach-credentials-detail p:last-child {
+      margin-bottom: 0;
+    }
+
+    .coach-credentials-detail strong {
+      color: var(--text);
+    }
+
+    /* Philosophy Section */
+    .philosophy-section {
+      padding: 5rem 2rem;
+      background: var(--cream);
+    }
+
+    .philosophy-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .philosophy-intro {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 3rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .philosophy-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      height: 400px;
+      cursor: pointer;
+    }
+
+    .philosophy-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .philosophy-card:hover .philosophy-image {
+      transform: scale(1.05);
+    }
+
+    .philosophy-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(26, 26, 26, 0.95), transparent);
+      padding: 2rem;
+      color: white;
+      transform: translateY(30px);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .philosophy-card:hover .philosophy-overlay {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .philosophy-overlay h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.3px;
+    }
+
+    .philosophy-overlay p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Approach Section */
+    .approach {
+      padding: 5rem 2rem;
+      background: var(--dark);
+      color: var(--cream);
+      margin-top: 0;
+    }
+
+    .approach-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .approach .section-title {
+      color: var(--cream);
+    }
+
+    .approach-text {
+      max-width: 700px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(248, 247, 244, 0.9);
+    }
+
+    .approach-text p + p {
+      margin-top: 1.5rem;
+    }
+
+    .approach-text strong {
+      color: var(--sage-light);
+    }
+
+    /* Social Section */
+    .social-section {
+      padding: 4rem 2rem;
+      background: white;
+      text-align: center;
+    }
+
+    .social-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .social-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .instagram-handle {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.5px;
+    }
+
+    .instagram-handle a {
+      color: var(--sage);
+      text-decoration: none;
+    }
+
+    .instagram-handle a:hover {
+      text-decoration: underline;
+    }
+
+    .instagram-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--sage);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Footer CTA */
+    .footer-cta {
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, var(--sage) 0%, #4a8a6f 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .footer-cta h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .footer-cta p {
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .footer-cta a {
+      display: inline-block;
+      margin: 0 1rem;
+      padding: 0.9rem 2rem;
+      background: white;
+      color: var(--sage);
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .footer-cta a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 2.5rem 1.5rem 3rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .credentials {
+        gap: 1rem;
+      }
+
+      .credential {
+        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
+      }
+
+      .cta-secondary {
+        display: block;
+        margin-left: 0;
+        margin-top: 0.5rem;
+      }
+
+      .instagram-stats {
+        gap: 2rem;
+      }
+
+      .services-grid {
+        gap: 1.5rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .approach-text {
+        font-size: 1rem;
+      }
+
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      .transformations-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .transform-stat {
+        font-size: 2rem;
+      }
+
+      .outcomes-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .testimonial-text {
+        font-size: 0.9rem;
+      }
+
+      .coach-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .coach-text h2 {
+        font-size: 1.5rem;
+      }
+
+      .coach-credentials-detail {
+        padding: 1.25rem;
+      }
+
+      .philosophy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .philosophy-card {
+        height: 300px;
+      }
+
+      .philosophy-overlay {
+        padding: 1.5rem;
+      }
+
+      .philosophy-overlay h3 {
+        font-size: 1.1rem;
+      }
+
+      .philosophy-overlay p {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--sage);
+      outline-offset: 2px;
+    }
+
+    button:focus-visible {
+      outline: 2px solid white;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Lucian PT</div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Build strength, reclaim <span>movement</span></h1>
+        <p>
+          Evidence-based coaching in mobility, bodyweight strength, and metabolic health. 
+          Based in Queenstown, NZ. Specialized in diabetes remission protocols and functional performance.
+        </p>
+        <div class="credentials">
+          <span class="credential">BSc Sports Science</span>
+          <span class="credential">FRC Certified</span>
+          <span class="credential">PT</span>
+          <span class="credential">Spiral Stabilization</span>
+        </div>
+        <div style="margin-top: 2rem;">
+          <a href="https://instagram.com/luciantrainer" class="cta-button">Get Started</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meet Your Coach Section -->
+    <section class="coach-section">
+      <div class="coach-container">
+        <div class="coach-content">
+          <div class="coach-image-wrapper">
+            <img src="headshot.jpg" alt="Lucian PT - Personal Trainer" class="coach-image">
+          </div>
+          <div class="coach-text">
+            <h2>Meet Your Coach</h2>
+            <p>
+              With over a decade of coaching experience, Lucian specializes in creating real, lasting transformations. 
+              His approach combines evidence-based training methodology with a deep commitment to understanding each client's unique needs.
+            </p>
+            <p>
+              Whether you're rebuilding after injury, managing a metabolic condition, or building strength from scratch, 
+              Lucian's personalized coaching will guide you to sustainable results.
+            </p>
+            <div class="coach-credentials-detail">
+              <p><strong>Qualifications:</strong> BSc Sports Science, FRC Certified, Spiral Stabilization, Personal Trainer</p>
+              <p><strong>Experience:</strong> Coaching since 2013 | Specialization: Functional movement, metabolic health, diabetes remission</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      <div class="services-container">
+        <h2 class="section-title">What We Work On</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>Mobility Training</h3>
+            <p>
+              Restore functional range of motion and movement quality. Using FRC principles 
+              and spiral stabilization to address movement restrictions at the root.
+            </p>
+          </div>
+          <div class="service-card">
+            <h3>Bodyweight Strength</h3>
+            <p>
+              Build real strength using progressive calisthenics and movement patterns. 
+              No equipment needed—just intentional training and progressive loading.
+            </p>
+          </div>
+          <div class="service-card">
+            <h3>Diabetes Remission Coaching</h3>
+            <p>
+              Structured metabolic training and lifestyle coaching to help you achieve 
+              diabetes remission through evidence-based movement and nutrition protocols.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy in Action -->
+    <section class="philosophy-section">
+      <div class="philosophy-container">
+        <h2 class="section-title">Philosophy in Action</h2>
+        <p class="philosophy-intro">
+          Real coaching combines smart movement with evidence-based nutrition. Here's how it works in practice.
+        </p>
+        <div class="philosophy-grid">
+          <div class="philosophy-card">
+            <img src="beach.jpg" alt="Functional movement training" class="philosophy-image">
+            <div class="philosophy-overlay">
+              <h3>Functional Movement</h3>
+              <p>Training that translates to real life—building strength and mobility the way your body was designed to move.</p>
+            </div>
+          </div>
+          <div class="philosophy-card">
+            <img src="steaks.jpg" alt="Nutrition-first approach" class="philosophy-image">
+            <div class="philosophy-overlay">
+              <h3>Real Food, Real Results</h3>
+              <p>Nutrition is non-negotiable. Quality whole foods fuel performance and transformation—no shortcuts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      <div class="approach-container">
+        <h2 class="section-title">The Approach</h2>
+        <div class="approach-text">
+          <p>
+            Every body is different. Whether you're recovering from injury, managing 
+            a metabolic condition, or looking to build real strength, coaching is 
+            <strong>personalized, progressive, and grounded in movement science.</strong>
+          </p>
+          <p>
+            Training isn't about looking good in photos—it's about <strong>building capability, 
+            resilience, and the ability to move well for life.</strong> That's what we optimize for.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transformations Section -->
+    <section class="services">
+      <div class="services-container">
+        <h2 class="section-title">Real Results</h2>
+        <div class="transformations-grid">
+          <div class="transformation-card">
+            <div class="transform-stat">−14 kg</div>
+            <div class="transform-name">Faheem</div>
+            <div class="transform-timeframe">4 months</div>
+          </div>
+          <div class="transformation-card">
+            <div class="transform-stat">−35 kg</div>
+            <div class="transform-name">Anam</div>
+            <div class="transform-detail">Type 2 Diabetes in remission</div>
+            <div class="transform-timeframe">6 months</div>
+          </div>
+          <div class="transformation-card">
+            <div class="transform-stat">−11 kg</div>
+            <div class="transform-name">Gabriela</div>
+            <div class="transform-timeframe">6 months</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client Outcomes Section -->
+    <section class="services">
+      <div class="services-container">
+        <h2 class="section-title">What Clients Experience</h2>
+        <div class="outcomes-grid">
+          <div class="outcome-item">
+            <h4>Sustainable Weight Loss</h4>
+            <p>Shed pounds and inches while building muscle. Real nutrition + functional training that works.</p>
+          </div>
+          <div class="outcome-item">
+            <h4>Reclaimed Energy & Vitality</h4>
+            <p>Clients report feeling like they've regained years. Increased energy, better sleep, revitalized wellbeing.</p>
+          </div>
+          <div class="outcome-item">
+            <h4>Metabolic Transformation</h4>
+            <p>Improved body composition, defined muscle, and metabolic health—not just aesthetics, but real capability.</p>
+          </div>
+          <div class="outcome-item">
+            <h4>Stronger Confidence</h4>
+            <p>Achieving fitness goals builds self-assurance. Clients tackle new challenges and embrace confidence in all areas.</p>
+          </div>
+          <div class="outcome-item">
+            <h4>Functional Movement</h4>
+            <p>Move the way your body was designed to move. Functional strength that serves you in daily life.</p>
+          </div>
+          <div class="outcome-item">
+            <h4>Lasting Results</h4>
+            <p>No shortcuts. Built on nutrition, smart training, and accountability. Results that endure.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <div class="testimonials-container">
+        <h2 class="section-title">Client Stories</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "It is the best experience I had with Personal training. Lucian has changed my lifestyle completely. Within 5 months I have lost 10 kilos and learned how to eat healthy and maintain a healthy lifestyle. Lucian has always paid attention to the details and tailor sessions taking in consideration my health issues and my strength."
+            </p>
+            <div class="testimonial-author">Irina D</div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "Lucian is a great PT. He's very knowledgeable about diet and nutrition and his training sessions are challenging and effective. I am more toned than I have been in years. Highly recommend him."
+            </p>
+            <div class="testimonial-author">Joanna L</div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "I started at 118.6kg and went down to 94kg in under 5 months. Lucian concentrates on functional movement and moving your body the way it was designed to move. Following his diet and exercise plan really works for any body size or shape."
+            </p>
+            <div class="testimonial-author">Mohammed P</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Section -->
+    <section class="social-section">
+      <div class="social-container">
+        <div class="social-label">Follow for Movement Tips & Updates</div>
+        <div class="instagram-handle">
+          <a href="https://instagram.com/luciantrainer">@luciantrainer</a>
+        </div>
+        <div class="instagram-stats">
+          <div class="stat">
+            <div class="stat-number">576</div>
+            <div class="stat-label">Followers</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">287</div>
+            <div class="stat-label">Following</div>
+          </div>
+        </div>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+          Real coaching insights, movement breakdowns, and transformation stories
+        </p>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">
+          📍 Queenstown, New Zealand
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="footer-cta">
+      <h2>Ready to Transform Your Movement?</h2>
+      <p>
+        Based in Queenstown, NZ. Start with a consultation. We'll assess your movement quality, 
+        discuss your goals, and build a customized plan tailored to you.
+      </p>
+      <div>
+        <a href="https://instagram.com/luciantrainer">Get in Touch</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
